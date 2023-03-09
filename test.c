@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 int isPrime(int number){
-    int i;
+    int i,j;
     if(number < 2){
         return 0;
     }
