@@ -1,23 +1,25 @@
 #include <stdio.h>
-#include <stdbool.h>
+#include <stdbool.h> // this header file is for boolean value like true and false //
+#include <math.h>
 
-int isPrime(int number){
+bool isPrime(int number){
     int i,j;
     if(number < 2){
-        return 0;
+        return false;
     }
     if(number == 2){
-        return 1;
+        return true;
     }
     if(number % 2 == 0){
-        return 0;
+        return false;
     }
-    for(i = 3; i <= number/2; i += 2){
+    int root = sqrt(number);
+    for(i = 3; i <= root; i += 2){
         if(number % i == 0){
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 int main(void){
@@ -30,7 +32,7 @@ int main(void){
         if(number == 0){
             break;
         }
-        if(1 == isPrime(number)){
+        if(true == isPrime(number)){
             printf("%d is prime number\n", number);
         }else{
             printf("%d is not a prime number\n", number);
